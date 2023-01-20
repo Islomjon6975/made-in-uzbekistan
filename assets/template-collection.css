@@ -11,6 +11,16 @@
   }
 }
 
+.isolate {
+  display: flex;
+  justify-content: center;
+}
+
+.collection {
+  max-width: 1440px;
+  width: 100%;
+}
+
 .collection .loading-overlay {
   top: 0;
   right: 0;
@@ -50,6 +60,9 @@
 
 .collection__title.title-wrapper {
   margin-bottom: 2.5rem;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
 }
 
 .collection__title .title:not(:only-child) {

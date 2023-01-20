@@ -1,5 +1,6 @@
 .footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  background: #021231;
 }
 
 .footer:not(.color-background-1) {
@@ -9,6 +10,11 @@
 .footer__content-top {
   padding-bottom: 5rem;
   display: block;
+  max-width: 1440px;
+}
+
+.list-menu__item--active {
+  text-decoration: none !important;
 }
 
 @media screen and (max-width: 749px) {
@@ -42,7 +48,11 @@
 
 .footer__content-bottom {
   border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
-  padding-top: 3rem;
+  background: var(--primary-black) !important;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .footer__content-bottom:only-child {
@@ -150,6 +160,8 @@
   margin-bottom: 2rem;
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
+  text-align: left;
+  color: var(--primary-white);
 }
 
 @media screen and (min-width: 990px) {
@@ -369,6 +381,19 @@ noscript .localization-selector.link {
 .footer__copyright {
   text-align: center;
   margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__copyright--wrapper {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 750px) {
@@ -400,6 +425,8 @@ noscript .localization-selector.link {
   .footer-block__details-content > p,
   .footer-block__details-content > li {
     padding: 0;
+    list-style-position: inside;
+    list-style-type: disc;
   }
 
   .footer-block:only-child li {
@@ -425,7 +452,7 @@ noscript .localization-selector.link {
   .footer-block__details-content .list-menu__item--link:hover,
   .copyright__content a:hover {
     color: rgb(var(--color-foreground));
-    text-decoration: underline;
+    text-decoration: none;
     text-underline-offset: 0.3rem;
   }
 
@@ -471,6 +498,7 @@ noscript .localization-selector.link {
   text-decoration: none;
 }
 
+
 @keyframes animateLocalization {
   0% {
     opacity: 0;
@@ -493,7 +521,7 @@ noscript .localization-selector.link {
 }
 
 .footer .disclosure__link--active {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* check for flexbox gap in older Safari versions */
