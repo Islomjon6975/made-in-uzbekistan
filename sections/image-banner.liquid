@@ -91,12 +91,13 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2 class="banner__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+            {% comment %} <h2 class="banner__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
               <span>{{ block.settings.heading | escape }}</span>
-            </h2>
+            </h2> {% endcomment %}
+            <img src="{{  block.settings.heading.src | img_url: 'large'  }}" alt="{{ section.settings.heading.alt }}" class="banner__title">
           {%- when 'text' -%}
             <div class="banner__text {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <span>{{ block.settings.text | escape }}</span>
+              <span class="banner__description">{{ block.settings.text | escape }}</span>
             </div>
           {%- when 'buttons' -%}
             <div class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
@@ -311,9 +312,8 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
+          "type": "image_picker",
           "id": "heading",
-          "default": "Image banner",
           "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
         },
         {
